@@ -1,0 +1,23 @@
+Change Log for JSR 338: Java Persistence 2.1
+
+Description: Changes for Java Persistence 2.2 MR
+
+Maintenance Lead: Lukas Jungmann, Oracle Corporation
+
+Feedback: comments should be sent to jpa-spec@javaee.groups.io
+
+Proposed changes:
+* Add ability to stream the result of a query execution
+  - https://github.com/javaee/jpa-spec/issues/99
+  - added default Stream getResultStream()/default Stream<X> getResultStream() methods to javax.persistence.Query/javax.persistence.TypedQuery 
+* Add @Repeatable
+  - https://github.com/javaee/jpa-spec/issues/115
+  - extended existing annotations
+  - added new container annotations: javax.persistence.SequenceGenerators and javax.persistence.TableGenerators
+* Add support for basic Java 8 Date and Time types
+  - https://github.com/javaee/jpa-spec/issues/63
+  - supported types are: java.time.LocalDate, java.time.LocalTime, java.time.LocalDateTime, java.time.OffsetTime and java.time.OffsetDateTime
+* Allow AttributeConverters to support CDI injection
+  - https://github.com/javaee/jpa-spec/issues/109
+* updated persistence provider discovery mechanism
+  - https://java.net/jira/browse/JPA_SPEC-146
