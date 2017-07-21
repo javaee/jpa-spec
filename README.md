@@ -1,6 +1,6 @@
 # Java Persistence API specification
 
-This is collaboration repository for JSR 338: JavaTM Persistence 2.1: https://www.jcp.org/en/jsr/detail?id=338
+This is collaboration repository for JSR 338: Java Persistence 2.1: https://www.jcp.org/en/jsr/detail?id=338
 
 For specification related discussions join https://javaee.groups.io/g/jpa-spec
 
