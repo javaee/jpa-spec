@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 - 2013 Oracle Corporation. All rights reserved.
+ * Copyright (c) 2011 - 2017 Oracle Corporation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -24,7 +24,6 @@ import java.util.List;
  * <p>
  * Stored procedure query execution may be controlled in accordance with 
  * the following:
- * <p>
  * <ul>
  * <li>The <code>setParameter</code> methods are used to set the values of 
  * all required <code>IN</code> and <code>INOUT</code> parameters.  

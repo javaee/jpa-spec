@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 - 2013 Oracle Corporation. All rights reserved.
+ * Copyright (c) 2011 - 2017 Oracle Corporation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -13,10 +13,6 @@
  *
  ******************************************************************************/ 
 package javax.persistence; 
-
-import java.lang.annotation.Target;
-import java.lang.annotation.Retention;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Specifies the mode of a parameter of a stored procedure query.

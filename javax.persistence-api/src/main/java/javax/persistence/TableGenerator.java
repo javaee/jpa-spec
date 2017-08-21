@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2008 - 2013 Oracle Corporation. All rights reserved.
+ * Copyright (c) 2008 - 2017 Oracle Corporation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -9,6 +9,7 @@
  * http://www.eclipse.org/org/documents/edl-v10.php.
  *
  * Contributors:
+ *     Lukas Jungmann  - Java Persistence 2.2
  *     Linda DeMichiel - Java Persistence 2.1
  *     Linda DeMichiel - Java Persistence 2.0
  *
@@ -21,6 +22,8 @@ import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+import java.lang.annotation.Repeatable;
 
 /**
  * Defines a primary key generator that may be 
@@ -69,6 +72,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *
  * @since Java Persistence 1.0
  */
+@Repeatable(TableGenerators.class)
 @Target({TYPE, METHOD, FIELD}) 
 @Retention(RUNTIME)
 public @interface TableGenerator {

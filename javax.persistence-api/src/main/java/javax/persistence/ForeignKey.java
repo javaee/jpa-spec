@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2011 - 2013 Oracle Corporation. All rights reserved.
+ * Copyright (c) 2011 - 2017 Oracle Corporation. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
@@ -30,7 +30,6 @@ import static javax.persistence.ConstraintMode.CONSTRAINT;
  * The syntax used in the <code>foreignKeyDefinition</code> element 
  * should follow the SQL syntax used by the target database for foreign
  * key constraints.  For example, this may be similar the following:
- * <p>
  * <pre>
  * FOREIGN KEY ( &#060;COLUMN expression&#062; {, &#060;COLUMN expression&#062;}... )
  * REFERENCES &#060;TABLE identifier&#062; [
