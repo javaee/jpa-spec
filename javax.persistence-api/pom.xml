@@ -28,6 +28,9 @@
     <artifactId>javax.persistence-api</artifactId>
     <version>2.2-SNAPSHOT</version>
 
+    <description>Java(TM) Persistence API</description>
+    <url>https://github.com/javaee/jpa-spec</url>
+
     <licenses>
         <license>
             <name>Eclipse Public License v1.0</name>
