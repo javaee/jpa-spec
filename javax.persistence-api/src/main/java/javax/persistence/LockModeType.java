@@ -1,18 +1,18 @@
 /*******************************************************************************
- * Copyright (c) 2008, 2009 Sun Microsystems. All rights reserved. 
- * 
- * This program and the accompanying materials are made available under the 
- * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0 
- * which accompanies this distribution. 
- * The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
- * and the Eclipse Distribution License is available at 
- * http://www.eclipse.org/org/documents/edl-v10.php.
- * 
- * Contributors:
- *     Linda DeMichiel - Java Persistence 2.0 - Version 2.0 (October 1, 2009)
- *     Specification available from http://jcp.org/en/jsr/detail?id=317
+ * Copyright (c) 2008 - 2014 Oracle Corporation. All rights reserved.
  *
- ******************************************************************************/
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
+ * which accompanies this distribution.
+ * The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+ * and the Eclipse Distribution License is available at
+ * http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * Contributors:
+ *     Linda DeMichiel - Java Persistence 2.1
+ *     Linda DeMichiel - Java Persistence 2.0
+ *
+ ******************************************************************************/ 
 package javax.persistence;
 
 /**
@@ -36,7 +36,7 @@ package javax.persistence;
  *
  * <p> The semantics of requesting locks of type
  * <code>LockModeType.OPTIMISTIC</code> and
- * <code>LockModeType.OPTIMISTIC_FORCE_INCREMENT<code> are the
+ * <code>LockModeType.OPTIMISTIC_FORCE_INCREMENT</code> are the
  * following.
  *
  * <p> If transaction T1 calls for a lock of type 
@@ -50,8 +50,8 @@ package javax.persistence;
  * Transaction T2 eventually commits successfully; it does not 
  * matter whether T1 commits or rolls back and whether it does 
  * so before or after T2 commits.
- *   <li>
- *   </li> P2 (Non-repeatable read): Transaction T1 reads a row. 
+ *   </li>
+ *   <li> P2 (Non-repeatable read): Transaction T1 reads a row. 
  * Another transaction T2 then modifies or deletes that row, 
  * before T1 has committed. Both transactions eventually commit 
  * successfully.

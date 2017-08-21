@@ -1,19 +1,18 @@
 /*******************************************************************************
- * Copyright (c) 2008, 2009 Sun Microsystems, Oracle Corporation. All rights reserved. 
- * 
- * This program and the accompanying materials are made available under the 
- * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0 
- * which accompanies this distribution. 
- * The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
- * and the Eclipse Distribution License is available at 
- * http://www.eclipse.org/org/documents/edl-v10.php.
- * 
- * Contributors:
- *     Linda DeMichiel - Java Persistence 2.0 - Version 2.0 (October 1, 2009)
- *     Specification available from http://jcp.org/en/jsr/detail?id=317
- *     Oracle committers - EclipseLink implementation of Persistence and PersistenceUtil 
+ * Copyright (c) 2008 - 2013 Oracle Corporation. All rights reserved.
  *
- ******************************************************************************/
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 and Eclipse Distribution License v. 1.0
+ * which accompanies this distribution.
+ * The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+ * and the Eclipse Distribution License is available at
+ * http://www.eclipse.org/org/documents/edl-v10.php.
+ *
+ * Contributors:
+ *     Linda DeMichiel - Java Persistence 2.1
+ *     Linda DeMichiel - Java Persistence 2.0
+ *
+ ******************************************************************************/ 
 package javax.persistence;
 
 import java.util.List;
@@ -27,7 +26,8 @@ import javax.persistence.spi.LoadState;
 
 /**
  * Bootstrap class that is used to obtain an {@link EntityManagerFactory}
- * in Java SE environments.  
+ * in Java SE environments.  It may also be used to cause schema
+ * generation to occur.
  * 
  * <p> The <code>Persistence</code> class is available in a Java EE
  * container environment as well; however, support for the Java SE
@@ -61,9 +61,10 @@ public class Persistence {
      * @param persistenceUnitName
      *            the name of the persistence unit
      * @param properties
-     *            Additional properties to use when creating the factory. The
-     *            values of these properties override any values that may have
-     *            been configured elsewhere.
+     *            Additional properties to use when creating the factory. 
+     *            These properties may include properties to control
+     *            schema generation.  The values of these properties override 
+     *            any values that may have been configured elsewhere.
      * @return the factory that creates EntityManagers configured according to
      *         the specified persistence unit.
      */
@@ -85,6 +86,39 @@ public class Persistence {
         }
         return emf;
     }
+
+
+    /**
+     * Create database schemas and/or tables and/or create DDL
+     * scripts as determined by the supplied properties.
+     * <p>
+     * Called when schema generation is to occur as a separate phase
+     * from creation of the entity manager factory.
+     * <p>
+     * @param persistenceUnitName the name of the persistence unit
+     * @param map properties for schema generation;  these may
+     *             also contain provider-specific properties.  The
+     *             value of these properties override any values that
+     *             may have been configured elsewhere..             
+     * @throws PersistenceException if insufficient or inconsistent
+     *         configuration information is provided or if schema
+     *         generation otherwise fails.
+     *
+     * @since Java Persistence 2.1
+     */
+    public static void generateSchema(String persistenceUnitName, Map map) {
+        PersistenceProviderResolver resolver = PersistenceProviderResolverHolder.getPersistenceProviderResolver();
+        List<PersistenceProvider> providers = resolver.getPersistenceProviders();
+        
+        for (PersistenceProvider provider : providers) {
+            if (provider.generateSchema(persistenceUnitName, map)) {
+                return;
+            }
+        }
+        
+        throw new PersistenceException("No Persistence provider to generate schema named " + persistenceUnitName);
+    }
+    
 
     /**
      * Return the PersistenceUtil instance
