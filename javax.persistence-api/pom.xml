@@ -55,6 +55,7 @@
         <mailingList>
             <name>JPA Specification Group</name>
             <subscribe>jpa-spec+subscribe@javaee.groups.io</subscribe>
+            <unsubscribe>jpa-spec+unsubscribe@javaee.groups.io</unsubscribe>
             <post>jpa-spec@javaee.groups.io</post>
             <archive>https://javaee.groups.io/g/jpa-spec/topics</archive>
         </mailingList>
@@ -72,7 +73,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <spec.non.final>false</spec.non.final>
+        <spec.non.final>true</spec.non.final>
         <spec.version>2.2</spec.version>
         <spec.build>01</spec.build>
         <spec.impl.version>2.2</spec.impl.version>
