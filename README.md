@@ -12,5 +12,5 @@ Reference of the API defined by the specification and full reference implementat
 through the [EclipseLink project](eclipselink.org) with sources of the API available at: https://github.com/eclipse/javax.persistence
 and of the RI at: https://github.com/eclipse/eclipselink.runtime
 
-Latest version of the javadoc: https://javadoc.io/doc/org.eclipse.persistence/javax.persistence/2.2.0-RC1
+Latest version of the javadoc: https://javadoc.io/doc/org.eclipse.persistence/javax.persistence/2.2.0
 
